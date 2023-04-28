@@ -1,0 +1,28 @@
+import { useEffect, useState } from "react";
+
+
+useEffect(() => {
+    const controller = new AbortController();
+    const signal = controler.signal;
+
+    fetch(" ", { signal })
+        .then((res) => res.json())
+        .then((data) => {
+            setuser(data);
+        })
+
+    return () => {
+        console.log("cancelled!")
+        controller.abort();
+    };
+
+}, []);
+
+return (
+    <div>
+
+
+    </div>
+)
+
+export default 
