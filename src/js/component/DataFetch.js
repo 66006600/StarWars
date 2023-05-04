@@ -5,13 +5,23 @@ useEffect(() => {
     const controller = new AbortController();
     const signal = controler.signal;
 
-    fetch(" ", { signal })
+    fetch("https://www.swapi.tech/api/", { signal })
         .then((res) => res.json())
         .then((data) => {
             setuser(data);
         })
+      
+
+        .catch(err=> {
+            if(err.name === "AbortError"){
+                console.log("cancelled!")
+            }else{
+
+            }
+        })
 
     return () => {
+        
         console.log("cancelled!")
         controller.abort();
     };
