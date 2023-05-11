@@ -9,7 +9,7 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import  {NavbarMenu}  from "./component/navbarMenu";
+import  NavbarMenu  from "./component/navbarMenu";
 import { Footer } from "./component/footer";
 import Planets from "./views/planets";
 import Characters from "./views/character";
