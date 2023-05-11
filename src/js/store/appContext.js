@@ -4,8 +4,8 @@ import getState from "./flux.js";
 // Don't change, here is where we initialize our context, by default it's just going to be null.
 export const Context = React.createContext(null);
 
-// This function injects the global store to any view/component where you want to use it, we will inject the context to layout.js, you can see it here:
-// https://github.com/4GeeksAcademy/react-hello-webapp/blob/master/src/js/layout.js#L35
+// This function injects the global store to any view/component where you want to use it, we will inject the context to layout.js
+
 const injectContext = PassedComponent => {
 	const StoreWrapper = props => {
 		//this will be passed as the contenxt value
@@ -22,6 +22,29 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
+
+			function getData() {
+				const [Data, setData] = useState([])
+			
+				const cargarDatos = async () => {
+					try {
+						const url = "https://swapi.dev/api/";
+						const res = await fetch(url);
+						if (res.ok) {
+							const datos = await res.json();
+							console.log(datos);
+						} else {
+							console.log(res.status);
+						}
+			
+					} catch (err) {
+						console.log(err)
+					}
+				};
+				cargarDatos();
+			}
+			getData();
+
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
@@ -46,3 +69,9 @@ const injectContext = PassedComponent => {
 };
 
 export default injectContext;
+
+
+
+
+
+
