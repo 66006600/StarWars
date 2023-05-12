@@ -1,10 +1,14 @@
-import React from "react";
+import React { useContext } from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Dropdown from "Dropdown.js";
+import { Context } from "../store/appContext";
 
 
 export const NavbarMenu = () => {
+
+	const { store, actions } = useContext(Context);
+
 	return (
 		<Navbar>
 			<Navbar.Brand>
@@ -17,7 +21,7 @@ export const NavbarMenu = () => {
 				<Link className="nav-link" to="/Characters">Personajes</Link>
 				<Link className="nav-link" to="/planets">Planets</Link>
 			</Nav>
-			<Dropdown />
+			</ Dropdown >
 
 		</Navbar>
 	);
