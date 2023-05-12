@@ -34,9 +34,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const json = await response.json();
 
 					console.log =("Data", json);
-					setStore({peopleList: json.results })
+					setStore({peopleList: json.results})
 
 				},
+
+				setFavorites: (name) => {
+					const store = getStore ();
+					setStore({ favorites:[ ...store.favorites, name] })
+
+
+				}
 
 
 				// exampleFunction: () => {
