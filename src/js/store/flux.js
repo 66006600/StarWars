@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			favorites: [],
 			peopleList: [],
+			planetList:[],
 
 
 			// 	demo: [
@@ -35,6 +36,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					console.log =("Data", json);
 					setStore({peopleList: json.results})
+
+				},
+
+				fetchPlanet: async () => {
+
+					const URL = "https://www.swapi.tech/api/planet/";
+					const CONFIG = {
+						method: "GET",
+						headers: {
+							"Content-type": "application/json",
+						}
+					};
+					const response = await fetch(URL, CONFIG);
+					const json = await response.json();
+
+					console.log =("Data", json);
+					setStore({planetList: json.results})
+
+				},
+
+				fetchCharacter: async () => {
+
+					const URL = "https://www.swapi.tech/api/sheap/";
+					const CONFIG = {
+						method: "GET",
+						headers: {
+							"Content-type": "application/json",
+						}
+					};
+					const response = await fetch(URL, CONFIG);
+					const json = await response.json();
+
+					console.log =("Data", json);
+					setStore({sheapList: json.results})
 
 				},
 

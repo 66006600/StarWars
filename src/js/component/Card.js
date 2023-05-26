@@ -4,7 +4,7 @@
 // function Card({ imagen, title, text, url }) {
 //     console.log()
 //     return (
-//         <div className="card text-center">
+//         <div className="card text-center overflow-auto d-flex" >
 //             <div className="card-body">
 //                 <img src= {imagen} className="card-img-top" />
 //                 <h4 className="card.title pt-2">{title}</h4>

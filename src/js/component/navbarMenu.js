@@ -1,4 +1,4 @@
-import React { useContext } from "react";
+import { useContext } from "react";
 import { Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Dropdown from "Dropdown.js";
@@ -17,14 +17,15 @@ export const NavbarMenu = () => {
 				</image>
 			</Navbar.Brand>
 
-			<Nav className="mr-auto">				
+			<Nav className="mr-auto">
 				<Link className="nav-link" to="/Characters">Personajes</Link>
 				<Link className="nav-link" to="/planets">Planets</Link>
 			</Nav>
-			</ Dropdown >
+		    </Dropdown >
 
-		</Navbar>
-	);
+           </Navbar >
+		
+	)
 };
 
 export default NavbarMenu;
