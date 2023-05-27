@@ -18,6 +18,9 @@ export default function People({ data }) {
                                         <p>{people.height}</p>
                                         <strong>Mass</strong>
                                         <p>{people.mass}</p>
+                                        <strong>Gender</strong>
+                                        <p>{people.gender}</p>
+                                        
                                     </Card.Description>
 
                                 </Card.content>
