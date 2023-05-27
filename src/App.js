@@ -1,0 +1,39 @@
+import { useEffect } from 'react';
+import React { useState, useEffect } from "react";
+import './App.css';
+
+
+function App() {
+    const [people, setPeople] = useState([]);
+    const [planets, setPlanets] = useState([]);
+    const [loading, setLoading] = useState([]);
+
+    useEffect(() => {
+        async function fetchPeople() {
+            let res = await fetch('    ');
+            let data = await res.json();
+            setPeople(data.results);
+        }
+
+        async function fetchPlanets() {
+            let res = await fetch('    ');
+            let data = await res.json();
+            setPlanets(data.results);
+        }
+        fetchPeople();
+        fetchPlanets();
+        
+    }, [])
+    console.log('people', people);
+    console.log('planets', planets);
+    
+    return (
+        <div className="App">
+
+
+        </div>
+    )
+
+
+
+}
